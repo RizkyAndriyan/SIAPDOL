@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    @font-face {}
+    html {
+        font-family: inter;
+    }
+    .tmbl-sr {
+        width: auto;
+        height: 33px;
+        background-color: #E6F6EF;
+    }
+    .tmbl-sr:hover {
+        background-color: #00A65A;
+        color: white;
+    }
+    .tmbl-pr {
+        width: auto;
+        height: 33px;
+        background-color: #00A65A;
+    }
+    .tmbl-pr:hover {
+        background-color: #005B32;
+    }
+    input[type='radio'] {
+        display: none;
+    }
+    input[type='radio']+label:before {
+        content: '';
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border-radius: 15px;
+        background-color: white;
+        border: 1px solid gray;
+        margin-bottom: -3px;
+    }
+    input[type='radio']:checked+label:before {
+        border: 6px solid #00A65A;
+    }
+    .item {
+        background-image: url(../public/assets/icons/files-black.png);
+        background-repeat: no-repeat;
+        background-position: 13px;
+        background-color: none;
+        color: black;
+    }
+    .item:hover {
+        background-image: url(../public/assets/icons/files.png);
+        background-repeat: no-repeat;
+        background-position: 13px;
+        background-color: #009752;
+        color: white;
+    }
+}

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- font inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- alpinejs -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+    <!-- Phosphor icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- tailwindCSS -->
+    <link rel="stylesheet" href="output.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+</head>
+
+<body>
+    <!-- HERO -->
+    <div class="hero flex justify-center h-dvh my-12 lg:my-0 ">
+        <div class="container flex flex-col-reverse lg:flex-row justify-center  lg:justify-between px-4 lg:px-0 ">
+            <div class="my-auto ext-center lg:text-left flex flex-col items-center lg:items-start ">
+                <div class="">
+                    <h1 class="text-4xl text-center lg:text-start lg:text-6xl font-semibold text-primary-900 ">Temukan Informasi Pajak Anda</h1>
+                    <p class="text-xl text-center lg:text-start text font-medium text-gray-600 py-8 ">Portal Sistem Informasi Pajak Kab. Sumedang</p>
+                </div>
+                <div class="lg:w-8/12 bg-white">
+                    <img class="absolute pl-3.5 pt-2 " src="../public/assets/icons/search.png " alt="search">
+                    <input type="text" placeholder="Cari menu..." class="show-comand-palate pl-12 py-2 w-full rounded-lg bg-gray-100 focus:outline-none focus:bg-white" />
+                </div>
+                <div class="flex pt-12">
+                    <i class="ph-fill ph-arrow-circle-down " style="margin: 1px 8px 0 0; color: #6B7280; "></i>
+                    <p class="text-sm text-gray-500 ">Gulir untuk menjelajahi semua menu</p>
+                </div>
+            </div>
+            <div class="lg:w-8/12 my-auto mx-auto lg:mx- lg:justify-self-end ">
+                <img class="w-full " src="../public/assets/hero.svg " alt="hero ">
+            </div>
+        </div>
+    </div>
+    <!-- INFORMASI -->
+    <div class="informasi flex justify-center bg-primary-50 ">
+        <div class="container my-24 px-4 lg:px-0 ">
+            <div class="text-center ">
+                <h1 class="text-3xl lg:text-5xl font-semibold text-primary-900 ">Informasi Pajak Yang Anda Cari</h1>
+                <p class="text-lg font-medium text-primary-900 ">Temukan menu pelaporan pajak yang Anda cari</p>
+            </div>
+            <!-- ROWSATU -->
+            <div class="flex flex-col lg:flex-row mt-12 gap-x-5 ">
+                <div class="lg:w-8/12 ">
+                    <!-- CARD INFORMASI PBB -->
+                    <section class="flex rounded-2xl bg-white shadow-lg ">
+                        <div class="m-6 ">
+                            <img src="../public/assets/card1.png " class=" " alt="informasipbb ">
+                            <h5 class="text-3xl font-semibold text-primary-900 mt-4 text-start ">Informasi PBB</h5>
+                            <div class="flex mt-2 flex-wrap gap-x-2 gap-y-2 justify-start ">
+                                <!-- CETAK SALINAN SPPT -->
+                                <section>
+                                    <button type="button" class="show-salinan-sppt tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Cetak Salinan SPPT<i class="ms-2 ph ph-arrow-right"></i></button>
+                                    <!-- MODAL SALINAN SPPT -->
+                                    <div class="salinan-sppt h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
+                                        <div class="bg-white rounded-lg shadow-lg w-full overflow-y-auto h-4/6 mx-10 lg:mx-0 lg:w-2/6 p-6">
+                                            <!-- header -->
+                                            <div class="flex items-center justify-between">
+                                                <h5 class="text-2xl font-semibold text-primary-800 text-start">Cetak Salinan SPPT</h5>
+                                                <button class="close-salinan-sppt"><img src="../public/assets/icons/X.png" alt=""></button>
+                                            </div>
+                                            <!-- content -->
+                                            <div class="">
+                                                <form class="flex flex-col gap-y-4" action="">
+                                                    <div class="mt-4">
+                                                        <label class="text-sm font-semibold text-gray-800" for="nama ">Nama</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="text" id="nama " name="nama " placeholder="Masukan Nama " required>
+                                                    </div>
+                                                    <div class="">
+                                                        <label class="text-sm font-semibold text-gray-800 " for="nik ">NIK</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="number" id="nik" name="nik " placeholder="Masukan NIK " required>
+                                                    </div>
+                                                    <div class="">
+                                                        <label class="text-sm font-semibold text-gray-800 " for="nop ">Nomor Objek Pajak (NOP)</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="text" id="nama" name="nama " placeholder="Masukan Nomor Objek Pajak (NOP) " required>
+                                                    </div>
+                                                    <div class="">
+                                                        <label class="text-sm font-semibold text-gray-800 " for="sppt ">Tahun SPPT</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="text " id="sppt " name="sppt " placeholder="Masukan Tahun SPPT " required>
+                                                    </div>
+                                                    <div class="">
+                                                        <p class="text-sm font-semibold text-gray-800">Keperluan Salinan</p>
+                                                        <div class="mt-2 flex">
+                                                            <div class="">
+                                                                <input class="" type="radio" id="hilang" name="keperluan" value="Hilang"><label class="text-sm font-normal text-center flex gap-2" for="hilang">Hilang</label>
+                                                            </div>
+                                                            <div class="ml-4">
+                                                                <input class="ml-4 " type="radio" id="rusak" name="keperluan" value="Rusak"><label class="text-sm font-normal ml-2 text-center flex gap-2" for="rusak">Rusak</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="">
+                                                        <label class="text-sm font-semibold text-gray-800 " for="keterangan ">Keterangan</label><br>
+                                                        <textarea class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " name="keterangan " id="keterangan " cols="5 " rows="3 " placeholder="masukan keterangan "></textarea>
+                                                    </div>
+                                                    <div class="">
+                                                        <label class="text-sm font-semibold text-gray-800 " for="captcha ">Captcha</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="text " id="captcha " name="captcha" placeholder="Masukan Captcha " required>
+                                                    </div>
+                                                    <div class="flex justify-center mt-4">
+                                                        <img src="../public/assets/captcha.png " alt="">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="flex items-center w-full p-2 mt-6 bg-primary-500 rounded-lg">
+                                                <button class=" text-white w-full text-sm font-medium ">Cari Data</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        const salinan_sppt = document.querySelector('.salinan-sppt');
+                                        const show_salinan_sppt = document.querySelector('.show-salinan-sppt');
+                                        const close_salinan_sppt = document.querySelector('.close-salinan-sppt');
+
+                                        show_salinan_sppt.addEventListener('click', function() {
+                                            salinan_sppt.classList.remove('hidden')
+                                        });
+                                        close_salinan_sppt.addEventListener('click', function() {
+                                            salinan_sppt.classList.add('hidden')
+                                        });
+                                    </script>
+                                </section>
+                                <!-- CEK TAGIHAN SPPT -->
+                                <section>
+                                    <button type="button" class="show-tagihan-sppt tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Cek Tagihan PBB <i class="ms-2 ph ph-arrow-right "></i></button>
+                                    <!-- MODAL TAGIHAN SPPT -->
+                                    <div class="tagihan-sppt h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
+                                        <div class="bg-white rounded-lg shadow-lg w-full overflow-y-auto h-1/2 mx-10 lg:mx-0 lg:w-2/6 p-6">
+                                            <!-- header -->
+                                            <div class="flex items-center justify-between">
+                                                <h5 class="text-2xl font-semibold text-primary-800 text-start">Cek Tagihan PBB</h5>
+                                                <button class="close-tagihan-sppt"><img src="../public/assets/icons/X.png" alt=""></button>
+                                            </div>
+                                            <!-- content -->
+                                            <div class=" mt-6">
+                                                <form class="flex flex-col gap-y-4" action="">
+                                                    <div class="">
+                                                        <label class="text-sm font-semibold text-gray-800 " for="nop ">Nomor Objek Pajak (NOP)</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="text " id="nama " name="nama " placeholder="Masukan Nomor Objek Pajak (NOP) " required>
+                                                    </div>
+                                                    <div class="">
+                                                        <label class="text-sm font-semibold text-gray-800 " for="captcha ">Captcha</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="text " id="captcha " name="captcha" placeholder="Masukan Captcha " required>
+                                                    </div>
+                                                    <div class="flex justify-center mt-4">
+                                                        <img src="../public/assets/captcha.png " alt=" ">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="flex items-center w-full p-2 mt-6 bg-primary-500 rounded-lg">
+                                                <button class=" text-white w-full text-sm font-medium ">Cari Data</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        const tagihan_sppt = document.querySelector('.tagihan-sppt');
+                                        const show_tagihan_sppt = document.querySelector('.show-tagihan-sppt');
+                                        const close_tagihan_sppt = document.querySelector('.close-tagihan-sppt');
+
+                                        show_tagihan_sppt.addEventListener('click', function() {
+                                            tagihan_sppt.classList.remove('hidden')
+                                        });
+                                        close_tagihan_sppt.addEventListener('click', function() {
+                                            tagihan_sppt.classList.add('hidden')
+                                        });
+                                    </script>
+                                </section>
+                                <!-- CETAK SPPT-->
+                                <section>
+                                    <button type="button" class="show-cetak-sppt tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Cetak SPPT<i class="ms-2 ph ph-arrow-right "></i></button>
+                                    <!-- MODAL CETAK SPPT -->
+                                    <div class="cetak-sppt h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
+                                        <div class="bg-white rounded-lg shadow-lg w-full overflow-y-auto h-4/6 mx-10 lg:mx-0 lg:w-2/6 p-6">
+                                            <!-- header -->
+                                            <div class="flex items-center justify-between">
+                                                <h5 class="text-2xl font-semibold text-primary-800 text-start">Cetak SPPT</h5>
+                                                <button class="close-cetak-sppt"><img src="../public/assets/icons/X.png" alt="x"></button>
+                                            </div>
+                                            <!-- content -->
+                                            <div class=" mt-6">
+                                                <form class="flex flex-col gap-y-4" action="">
+                                                    <div class="">
+                                                        <label class="text-sm font-semibold text-gray-800" for="nama ">Nama</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="text" id="nama " name="nama " placeholder="Masukan Nama " required>
+                                                    </div>
+                                                    <div class="">
+                                                        <label class="text-sm font-semibold text-gray-800 " for="nik ">NIK</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="text " id="nik " name="nik " placeholder="Masukan NIK " required>
+                                                    </div>
+                                                    <div class="">
+                                                        <label class="text-sm font-semibold text-gray-800 " for="nop ">Nomor Objek Pajak (NOP)</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="text " id="nama " name="nama " placeholder="Masukan Nomor Objek Pajak (NOP) " required>
+                                                    </div>
+                                                    <div class="">
+                                                        <label class="text-sm font-semibold text-gray-800 " for="captcha ">Captcha</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="text " id="captcha " name="captcha" placeholder="Masukan Captcha " required>
+                                                    </div>
+                                                    <div class="flex justify-center mt-4">
+                                                        <img src="../public/assets/captcha.png " alt=" ">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="flex items-center w-full p-2 mt-6 bg-primary-500 rounded-lg">
+                                                <button class=" text-white w-full text-sm font-medium ">Cari Data</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        const cetak_sppt = document.querySelector('.cetak-sppt');
+                                        const show_cetak_sppt = document.querySelector('.show-cetak-sppt');
+                                        const close_cetak_sppt = document.querySelector('.close-cetak-sppt');
+
+                                        show_cetak_sppt.addEventListener('click', function() {
+                                            cetak_sppt.classList.remove('hidden')
+                                        });
+                                        close_cetak_sppt.addEventListener('click', function() {
+                                            cetak_sppt.classList.add('hidden')
+                                        });
+                                    </script>
+                                </section>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- CARD LOGIN PETUGAS-->
+                    <section class=" flex rounded-2xl bg-white mt-5 shadow-lg ">
+                        <div class="my-9 mx-6 flex content-center justify-center lg:justify-between w-full flex-col lg:flex-row ">
+                            <h5 class="text-3xl font-semibold text-primary-900 ">Login Petugas</h5>
+                            <div class="flex flex-wrap lg:items-center gap-y-2 gap-x-2 lg:gap-x-4 mt-2 lg:mt-0 ">
+                                <!-- LOGIN PETUGAS PBB -->
+                                <section>
+                                    <button class="show-login-pbb tmbl-pr rounded-lg text-sm font-medium py-2 px-3.5 text-white ">Login Petugas PBB<i class="ms-2 ph ph-lock-key "></i></button>
+                                    <!-- MODAL LOGIN PBB -->
+                                    <div class="login-pbb h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
+                                        <div class="bg-white rounded-lg shadow-lg w-full overflow-y-auto h-auto mx-10 lg:mx-0 lg:w-1/4 p-6">
+                                            <!-- header -->
+                                            <div class="flex items-center justify-between">
+                                                <h5 class="text-2xl font-semibold text-primary-800 text-start">Login PBB</h5>
+                                                <button class="close-login-pbb"><img src="../public/assets/icons/X.png" alt=""></button>
+                                            </div>
+                                            <!-- content -->
+                                            <div class="">
+                                                <form class="flex flex-col gap-y-4" action="">
+                                                    <div class="mt-4">
+                                                        <label class="text-sm font-semibold text-gray-800" for="username ">Username</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="text" id="username " name="username " placeholder="Masukan Username" required>
+                                                    </div>
+                                                    <div class="">
+                                                        <label class=" text-sm font-semibold text-gray-800 " for="password ">Password</label><br>
+                                                    </div>
+                                                    <div class="flex items-center my-auto justify-between rounded-md bg-gray-50 p-2 " x-data="{ show: true }" x-clock>
+                                                        <input :type="(show) ? 'text' : 'password'" placeholder="password" class="px-3 py-2 w-full bg-gray-50 rounded-md focus:outline-none" />
+
+                                                        <button class="block" @click="show = !show">
+                                                            <div x-show="show"><img src="../public/assets/icons/PassGreen.png" class="" alt=""></div>
+                                                            <div x-show="!show"><img src="../public/assets/icons/PassGray.png" class="" alt=""></div>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="flex items-center w-full p-2 mt-6 bg-primary-500 rounded-lg ">
+                                                <button class=" text-white w-full text-sm font-medium ">Cari Data</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        const login_pbb = document.querySelector('.login-pbb');
+                                        const show_login_pbb = document.querySelector('.show-login-pbb');
+                                        const close_login_pbb = document.querySelector('.close-login-pbb');
+
+                                        show_login_pbb.addEventListener('click', function() {
+                                            login_pbb.classList.remove('hidden')
+                                        });
+                                        close_login_pbb.addEventListener('click', function() {
+                                            login_pbb.classList.add('hidden')
+                                        });
+                                    </script>
+                                </section>
+                                <!-- LOGIN PETUGAS BPHTB -->
+                                <section>
+                                    <button class="tmbl-pr rounded-lg text-sm font-mediumr py-2 px-3.5 text-white ">Login Petugas BPHTB<i class="ms-2 ph ph-lock-key "></i></button>
+
+                                </section>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="lg:w-4/12 ">
+                    <!-- CARD PEMBAYARAN PAJAK -->
+                    <section class="flex rounded-2xl bg-white shadow-lg h-full mt-5 lg:mt-0 ">
+                        <div class="m-6 flex flex-col lg:items-start w-full ">
+                            <img src="../public/assets/pembayaran pajak.png " class="card-img-top " alt="pembayaran ">
+                            <h5 class="text-3xl font-semibold text-primary-900 mt-4 ">Pembayaran Pajak</h5>
+                            <div class="flex flex-wrap gap-y-2 gap-x-2 mt-2 ">
+                                <!-- PEMBAYARAN PBB -->
+                                <section>
+                                    <button class="show-bayar-pbb tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Bayar PBB<i class="ms-2 ph ph-arrow-right "></i></button>
+                                    <!-- MODAL PEMBAYARAN PBB -->
+                                    <div class="bayar-pbb h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden ">
+                                        <div class="bg-white rounded-lg shadow-lg w-full overflow-y-auto h-auto mx-10 lg:mx-0 lg:w-2/6 p-6 ">
+                                            <!-- header -->
+                                            <div class="flex items-center justify-between ">
+                                                <h5 class="text-2xl font-semibold text-primary-800 text-start ">Pembayaran PBB</h5>
+                                                <button class="close-bayar-pbb "><img src="../public/assets/icons/X.png " alt="x "></button>
+                                            </div>
+                                            <!-- content -->
+                                            <div class=" mt-6 ">
+                                                <form class="flex flex-col gap-y-4 " action=" ">
+                                                    <div class=" ">
+                                                        <label class="text-sm font-semibold text-gray-800 " for="nop ">Nomor Objek Pajak (NOP)</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="text " id="nama " name="nama " placeholder="Masukan Nomor Objek Pajak (NOP) " required>
+                                                    </div>
+                                                    <div class=" ">
+                                                        <label class="text-sm font-semibold text-gray-800 " for="captcha ">Tahun</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="number " id="captcha " name="captcha " placeholder="Masukan Tahun " required>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="flex items-center w-full p-2 mt-6 bg-primary-500 rounded-lg ">
+                                                <button class=" text-white w-full text-sm font-medium ">Cari Data</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        const bayar_pbb = document.querySelector('.bayar-pbb');
+                                        const show_bayar_pbb = document.querySelector('.show-bayar-pbb');
+                                        const close_bayar_pbb = document.querySelector('.close-bayar-pbb');
+
+                                        show_bayar_pbb.addEventListener('click', function() {
+                                            bayar_pbb.classList.remove('hidden')
+                                        });
+                                        close_bayar_pbb.addEventListener('click', function() {
+                                            bayar_pbb.classList.add('hidden')
+                                        });
+                                    </script>
+                                </section>
+                                <!-- PEMBAYARAN BPHTB -->
+                                <section>
+                                    <button class="show-bayar-pbhtb tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Bayar BPHTB<i class="ms-2 ph ph-arrow-right "></i></button>
+                                    <!-- MODAL PEMBAYARAN BPHTB -->
+                                    <div class="bayar-pbhtb h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden ">
+                                        <div class="bg-white rounded-lg shadow-lg w-full overflow-y-auto h-auto mx-10 lg:mx-0 lg:w-2/6 p-6 ">
+                                            <!-- header -->
+                                            <div class="flex items-center justify-between ">
+                                                <h5 class="text-2xl font-semibold text-primary-800 text-start ">Pembayaran PBB</h5>
+                                                <button class="close-bayar-pbhtb "><img src="../public/assets/icons/X.png " alt="x "></button>
+                                            </div>
+                                            <!-- content -->
+                                            <div class="mt-6 ">
+                                                <form class="flex flex-col gap-y-4 " action=" ">
+                                                    <div class=" ">
+                                                        <label class="text-sm font-semibold text-gray-800 " for="nop ">Nomor Objek Pajak (NOP)</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="text " id="nama " name="nama " placeholder="Masukan Nomor Objek Pajak (NOP) " required>
+                                                    </div>
+                                                    <div class=" ">
+                                                        <label class="text-sm font-semibold text-gray-800 " for="captcha ">Kode Bayar</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="text " id="captcha " name="captcha " placeholder="Masukan Kode Bayar " required>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="flex items-center w-full p-2 mt-6 bg-primary-500 rounded-lg ">
+                                                <button class=" text-white w-full text-sm font-medium ">Cari Data</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        const bayar_pbhtb = document.querySelector('.bayar-pbhtb');
+                                        const show_bayar_pbhtb = document.querySelector('.show-bayar-pbhtb');
+                                        const close_bayar_pbhtb = document.querySelector('.close-bayar-pbhtb');
+
+                                        show_bayar_pbhtb.addEventListener('click', function() {
+                                            bayar_pbhtb.classList.remove('hidden')
+                                        });
+                                        close_bayar_pbhtb.addEventListener('click', function() {
+                                            bayar_pbhtb.classList.add('hidden')
+                                        });
+                                    </script>
+                                </section>
+                                <!-- PEMBAYARAN PJDL -->
+                                <section>
+                                    <button href="# " class="show-bayar-pjdl tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Bayar PJDL<i class="ms-2 ph ph-arrow-right "></i></button>
+                                    <!-- MODAL PEMBAYARAN PJDL -->
+                                    <div class="bayar-pjdl h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden ">
+                                        <div class="bg-white rounded-lg shadow-lg w-full overflow-y-auto h-auto mx-10 lg:mx-0 lg:w-2/6 p-6 ">
+                                            <!-- header -->
+                                            <div class="flex items-center justify-between ">
+                                                <h5 class="text-2xl font-semibold text-primary-800 text-start ">Pembayaran PBB</h5>
+                                                <button class="close-bayar-pjdl "><img src="../public/assets/icons/X.png " alt="x "></button>
+                                            </div>
+                                            <!-- content -->
+                                            <div class="mt-6 ">
+                                                <form class="flex flex-col gap-y-4 " action=" ">
+                                                    <div class=" ">
+                                                        <label class="text-sm font-semibold text-gray-800 " for="captcha ">Kode Bayar</label><br>
+                                                        <input class="px-3 py-2 mt-2 w-full bg-gray-50 rounded-md focus:outline-none " type="text " id="captcha " name="captcha " placeholder="Masukan Kode Bayar " required>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="flex items-center w-full p-2 mt-6 bg-primary-500 rounded-lg ">
+                                                <button class=" text-white w-full text-sm font-medium ">Cari Data</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        const bayar_pjdl = document.querySelector('.bayar-pjdl');
+                                        const show_bayar_pjdl = document.querySelector('.show-bayar-pjdl');
+                                        const close_bayar_pjdl = document.querySelector('.close-bayar-pjdl');
+
+                                        show_bayar_pjdl.addEventListener('click', function() {
+                                            bayar_pjdl.classList.remove('hidden')
+                                        });
+                                        close_bayar_pjdl.addEventListener('click', function() {
+                                            bayar_pjdl.classList.add('hidden')
+                                        });
+                                    </script>
+                                </section>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- ROW DUA -->
+            <div class="flex flex-col lg:flex-row mt-8 gap-x-5 ">
+                <div class="lg:w-4/12 ">
+                    <!-- CARD JENIS PAJAK -->
+                    <div class="flex rounded-2xl bg-white shadow-lg h-full justify-center ">
+                        <div class="m-6 flex flex-col w-full lg:w-auto ">
+                            <img src="../public/assets/9 jenis pajak.png " class=" " alt="jenis-pajak ">
+                            <div class="text-center ">
+                                <h5 class="text-3xl font-semibold text-primary-900 mt-4 ">9 Jenis Pajak</h5>
+                                <p class="text-sm font-medium text-gray-500 mt-2 ">9 Pelaporan pajak yang tersedia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-4/1 flex flex-col justify-between ">
+                    <!-- CARD PAJAK HOTEL -->
+                    <div class="flex rounded-2xl bg-white shadow-lg ">
+                        <div class="m-6 flex flex-col ">
+                            <div class=" ">
+                                <img src="../public/assets/icons/Hotel.png " alt="hotel ">
+                            </div>
+                            <h5 class="text-3xl font-semibold text-primary-900 mt-2 ">PBJT-Perhotelan</h5>
+                            <p class="text-sm font-medium text-gray-500 mt-2 ">Pelaporan Pajak Hotel</p>
+                            <div class="mt-6 ">
+                                <a href="# " class="tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Lapor<i class="ms-2 ph ph-arrow-right "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD RESTORANT -->
+                    <div class="flex rounded-2xl mt-5 bg-white shadow-lg ">
+                        <div class="m-6 flex flex-col ">
+                            <div class=" ">
+                                <img src="../public/assets/icons/Restorant.png " alt="Restorant ">
+                            </div>
+                            <h5 class="text-3xl font-semibold text-primary-900 mt-2 ">PBJT-Makanan dan Minuman</h5>
+                            <p class="text-sm font-medium text-gray-500 mt-2 ">Pelaporan Pajak Restoran</p>
+                            <div class="mt-6 ">
+                                <a href="# " class="tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Lapor<i class="ms-2 ph ph-arrow-right "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-4/12 ">
+                    <!-- CARD HIBURAN -->
+                    <div class="flex rounded-2xl bg-white shadow-lg mt-5 lg:mt-0 ">
+                        <div class="m-6 flex flex-col ">
+                            <div class=" ">
+                                <img src="../public/assets/icons/Hiburan.png " alt="Hiburan ">
+                            </div>
+                            <h5 class="text-3xl font-semibold text-primary-900 mt-2 ">PBJT-Kesenian dan <br> Hiburan</h5>
+                            <p class="text-sm font-medium text-gray-500 mt-2 ">Pelaporan Pajak Hiburan</p>
+                            <div class="mt-6 ">
+                                <a href="# " class="tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Lapor<i class="ms-2 ph ph-arrow-right "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD PAJAK PARKIR -->
+                    <div class="flex rounded-2xl bg-white shadow-lg mt-5 ">
+                        <div class="m-6 flex flex-col ">
+                            <div class=" ">
+                                <img src="../public/assets/icons/parkir.png " alt="parkir ">
+                            </div>
+                            <h5 class="text-3xl font-semibold text-primary-900 mt-2 ">PBJT-Parkir</h5>
+                            <p class="text-sm font-medium text-gray-500 mt-2 ">Pelaporan Pajak Parkir</p>
+                            <div class="mt-6 ">
+                                <a href="# " class="tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Lapor<i class="ms-2 ph ph-arrow-right "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ROW TIGA -->
+            <div class="flex flex-col lg:flex-row mt-8 gap-x-5 ">
+                <div class="lg:w-4/12 ">
+                    <!-- CARD PAJAK MINERBA -->
+                    <div class="flex rounded-2xl bg-white shadow-lg ">
+                        <div class="m-6 flex flex-col ">
+                            <div class=" ">
+                                <img src="../public/assets/icons/Mineral.png " alt="mineral ">
+                            </div>
+                            <h5 class="text-3xl font-semibold text-primary-900 mt-2 ">Pajak Minerba</h5>
+                            <p class="text-sm font-medium text-gray-500 mt-2 ">Pelaporan Pajak Bukan Logam Mineral & Batuan</p>
+                            <div class="mt-6 ">
+                                <a href="# " class="tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Lapor<i class="ms-2 ph ph-arrow-right "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD PAJAK WALLET -->
+                    <div class="flex rounded-2xl bg-white shadow-lg mt-5 ">
+                        <div class="m-6 flex flex-col ">
+                            <div class=" ">
+                                <img src="../public/assets/icons/Wallet.png " alt="wallet ">
+                            </div>
+                            <h5 class="text-3xl font-semibold text-primary-900 mt-2 ">Pajak Sarang Walet</h5>
+                            <p class="text-sm font-medium text-gray-500 mt-2 ">Pelaporan Pajak Sarang Walet</p>
+                            <div class="mt-6 ">
+                                <a href="# " class="tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Lapor<i class="ms-2 ph ph-arrow-right "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-4/12 ">
+                    <!-- CARD PAJAK PENERANGAN -->
+                    <div class="flex rounded-2xl bg-white shadow-lg h-full mt-5 lg:mt-0 lg:justify-center ">
+                        <div class="m-6 flex flex-col lg:justify-center lg:text-center ">
+                            <div class="lg:mx-auto ">
+                                <img src="../public/assets/icons/Penerangan.png " alt="penerangan ">
+                            </div>
+                            <h5 class="text-3xl font-semibold text-primary-900 mt-2 ">Pajak Penerangan Umum</h5>
+                            <p class="text-sm font-medium text-gray-500 mt-2 ">Pelaporan Pajak Penerangan Umum</p>
+                            <div class="mt-6 ">
+                                <a href="# " class="tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Lapor<i class="ms-2 ph ph-arrow-right "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-4/12 ">
+                    <!-- CARD PAJAK REKLAME -->
+                    <div class="flex rounded-2xl bg-white shadow-lg mt-5 lg:mt-0 ">
+                        <div class="m-6 flex flex-col ">
+                            <div class=" ">
+                                <img src="../public/assets/icons/Reklame.png " class=" " alt="reklame ">
+                            </div>
+                            <h5 class="text-3xl font-semibold text-primary-900 mt-2 ">Pajak Reklame</h5>
+                            <p class="text-sm font-medium text-gray-500 mt-2 ">Pelaporan Pajak Reklame</p>
+                            <div class="mt-6 ">
+                                <a href="# " class="tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Lapor<i class="ms-2 ph ph-arrow-right "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD PAJAK AIR TANAH -->
+                    <div class="flex rounded-2xl bg-white shadow-lg mt-5 ">
+                        <div class="m-6 flex flex-col ">
+                            <div class=" ">
+                                <img src="../public/assets/icons/Air Tanah.png " class=" " alt="airtanah ">
+                            </div>
+                            <h5 class="text-3xl font-semibold text-primary-900 mt-2 ">Pajak Air Tanah</h5>
+                            <p class="text-sm font-medium text-gray-500 mt-2 ">Pelaporan Pajak Air Tanah</p>
+                            <div class="mt-6 ">
+                                <a href="# " class="tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Lapor<i class="ms-2 ph ph-arrow-right "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ROW EMPAT -->
+            <div class="flex flex-col lg:flex-row mt-8 gap-x-5 ">
+                <div class="lg:w-5/12 ">
+                    <!-- CARD TAPPING BOX -->
+                    <div class="flex rounded-2xl bg-white shadow-lg ">
+                        <div class="m-6 flex flex-row items-center justify-between w-full ">
+                            <div class=" ">
+                                <h5 class="text-3xl font-semibold text-primary-900 ">Tapping Box</h5>
+                                <p class="text-sm font-medium text-gray-500 ">Lihat data realtime tapping box</p>
+                            </div>
+                            <div class=" ">
+                                <a href="# " class="tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Lapor<i class="ms-2 ph ph-arrow-right "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-7/12 ">
+                    <!-- CARD REALISASI PAD -->
+                    <div class="flex w-full rounded-2xl bg-primary-900 shadow-lg mt-5 lg:mt-0 " style="background-image: url(../public/assets/bg.png); background-position-x: right; background-repeat: no-repeat; ">
+                        <div class="m-6 flex flex-row items-center justify-between w-full ">
+                            <div class=" ">
+                                <h5 class="text-3xl font-semibold text-white ">Realisasi PAD</h5>
+                                <p class="text-sm font-medium text-primary-50 ">Lihat realisai semua pajak</p>
+                            </div>
+                            <a href="# " class="tmbl-sr rounded-lg text-sm font-medium py-2 px-3.5 text-primary-900 ">Lapor<i class="ms-2 ph ph-arrow-right "></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ROW LIMA -->
+            <div class="flex mt-16 ">
+                <div class="w-full ">
+                    <div class="flex flex-wrap lg:flex-nowrap rounded-2xl bg-cream shadow-lg justify-between px-12 ">
+                        <div class="flex flex-col my-auto ">
+                            <h5 class="text-3xl font-semibold text-primary-900 mt-8 lg:mt-0 ">Sampaikan Aspirasi dan <br> Pengaduan Anda</h5>
+                            <p class="text-sm font-medium text-gray-500 mt-4 ">Mari berkontribusi untuk indonesia yang lebih baik!</p>
+                            <div class="bg-red-700 rounded-lg flex w-36 items-center mt-6 ">
+                                <a href="# " class="my-2 mx-auto "><img src="../public/assets/icons/lapor.png " alt=" "></a>
+                            </div>
+                        </div>
+                        <div class="col mt-8 flex mx-auto lg:mx-0 ">
+                            <img class=" " src="../public/assets/form.png " alt=" ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <footer>
+        <div class="flex justify-center bg-primary-900 ">
+            <div class="container text-center pt-20 pb-12 ">
+                <div class="flex justify-center ">
+                    <img class=" " src="../public/assets/logofooter.png " alt=" ">
+                </div>
+                <div class=" " style="padding-top: 24px; color: white; ">
+                    <p>© 2024 - Sistem Aplikasi Pajak Daerah Online Kab. Sumedang</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

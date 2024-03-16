@@ -1,0 +1,13 @@
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="output.css">
+<main class="grid min-h-screen w-full place-items-center bg-gray-900">
+    <div class="flex items-center space-x-2 rounded-md bg-gray-50 p-2" x-data="{ show: true }" x-clock>
+        <input :type="(show) ? 'text' : 'password'" placeholder="password" class="border-none bg-transparent text-lg text-gray-900 focus:outline-none" />
+
+        <button class="block" @click="show = !show">
+            <div x-show="show"><i class="fas fa-eye text-lg"></i></div>
+            <div x-show="!show"><i class="fas fa-eye-slash text-lg"></i></div>
+        </button>
+    </div>
+</main>
